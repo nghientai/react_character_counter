@@ -1,25 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="body-bg min-h-screen pt-12 md:pt-20 pb-6 px-2 md:px-0">
+            <header className='max-w-lg mx-auto'>
+                <h1 className='text-4xl font-bold text-white text-center'>
+                    Character Counter App
+                </h1>
+            </header>
+        <div class='flex items-center justify-center w-screen'>
+            <div class='bg-indigo-800 text-white font-bold rounded-lg border shadow-lg p-10'>Centered Content</div>
+        </div>
+        </div>
+    );
 }
 
 export default App;
