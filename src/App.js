@@ -39,7 +39,7 @@ function App() {
             <main className='max-w-screen-lg mx-auto my-10 bg-transparent w-full grid grid-cols-2 gap-4'>
                 {/* The form*/}
                 <div className='w-full flex flex-col'>
-                    <div className='mb-6 p-3 rounded bg-gray-200'>
+                    <div className='mb-6 p-3 rounded bg-gray-200 shadow-lg'>
                         <label className='block text-gray-700 text-sm font-bold mb-2' htmlFor='inputText'>
                             Input text
                         </label>
@@ -53,13 +53,16 @@ function App() {
                     </div>
                     <button
                         onClick={handleClick}
-                        className='bg-green-600 hover:bg-green-700 text-white font-bold px-4 py-1 rounded shadow-lg hover:shadow-xl transition duration-200'>
+                        className='bg-green-600 shadow-lg hover:bg-green-700 text-white font-bold px-4 py-1 rounded shadow-lg hover:shadow-xl transition duration-200'>
                         Submit
                     </button>
                 </div>
                 {/* The statistic */}
                 <div className='w-full flex flex-col'>
-                    <div className={`mb-6 p-3 rounded bg-gray-200 ${mostFrequentCharacter.length > 0 ? 'h-96 overflow-y-auto' : 'min-h-full'} `}>
+                    <div
+                        className={`mb-6 p-3 rounded bg-gray-200 shadow-lg ${
+                            mostFrequentCharacter.length > 0 ? 'h-96 overflow-y-auto' : 'min-h-full'
+                        } `}>
                         <label className='block text-gray-700 text-sm font-bold mb-2' htmlFor='inputText'>
                             Statistics
                         </label>
@@ -87,7 +90,7 @@ function App() {
                                 ) : (
                                     mostFrequentCharacter.map((char, index) => {
                                         return (
-                                            <tr key={index} className={`${index % 2 === 0 ? null : 'bg-gray-50'}`}>
+                                            <tr key={index} className={`${char.count > 1 && index + 1 <= 5 ? 'bg-yellow-200' : index % 2 === 0 ? '' : 'bg-gray-50'}`}>
                                                 <td class='p-4 whitespace-nowrap text-sm font-normal text-gray-900'>{index + 1}</td>
                                                 <td class='p-4 whitespace-nowrap text-sm font-normal text-gray-900'>{char.character}</td>
                                                 <td class='p-4 whitespace-nowrap text-sm font-normal text-gray-900'>{char.count}</td>
